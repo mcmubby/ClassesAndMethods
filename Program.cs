@@ -16,9 +16,11 @@ namespace ClassesAndMethods
 
             // ekene.addNumbers(10,30);
 
-            equilateralTriangle test = new equilateralTriangle(5,3);
-            test.Area();
-            test.Perimeter();
+            // equilateralTriangle test = new equilateralTriangle(5,3);
+            // test.Area();
+            // test.Perimeter();
+
+            Customer oniGbese = new Customer(500,1000);
         }
     }
 
@@ -64,6 +66,27 @@ namespace ClassesAndMethods
         {
             double result = 3*(_baseLength);
             Console.WriteLine($"The perimeter of the equilateral triangle is {result}");
+        }
+    }
+
+    class Customer
+    {
+        int _userBalance;
+        public Customer(int credit, int debit)
+        {
+            this._userBalance = 1000;
+            Credit(credit);
+            Debit(debit);
+            Console.WriteLine($"Your balance is {this._userBalance}");
+        }
+        private void Credit(int addMoney)
+        {
+            this._userBalance += addMoney;
+        }
+
+        private void Debit(int removeMoney)
+        {
+            this._userBalance -= removeMoney;
         }
     }
 }
