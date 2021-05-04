@@ -76,17 +76,21 @@ namespace ClassesAndMethods
         {
             this._userBalance = 1000;
             Credit(credit);
-            Debit(debit);
-            Console.WriteLine($"Your balance is {this._userBalance}");
+            //Tuple???
+            var result = Debit(debit);
+            Console.WriteLine($"Your balance is {this._userBalance} {result.Item1} {result.Item2}");
         }
         private void Credit(int addMoney)
         {
             this._userBalance += addMoney;
         }
 
-        private void Debit(int removeMoney)
+//Tuple???
+        private (string, int, double) Debit(int removeMoney)
         {
             this._userBalance -= removeMoney;
+            return ("Resy" , this._userBalance, 56.3);
+
         }
     }
 }
